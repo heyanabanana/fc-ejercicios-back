@@ -111,13 +111,13 @@ public class Main {
 
         //SORT
         System.out.println("CANDIDATOS TRABAJO REMOTO");
-        System.out.println(candidatesList.totalMobility());
+        System.out.println(candidatesList.totalRemote());
 
         System.out.println("CANDIDATOS TRASLADO");
         System.out.println(candidatesList.totalMobility());
 
         System.out.println("CANDIDATOS NO REMOTO NO TRASLADO");
-        System.out.println(candidatesList.totalMobility());
+        System.out.println(candidatesList.totalMobilityAndRemote());
 
         System.out.println("CIUDADES POR CANDIDATO");
         System.out.println(candidatesList.setCountryTop());
