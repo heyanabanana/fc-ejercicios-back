@@ -1,7 +1,6 @@
 package ejerciciosiete;
 
 import ejerciciosiete.models.*;
-import ejerciciosiete.util.CreatePdf;
 
 import java.util.ArrayList;
 
@@ -100,6 +99,17 @@ public class Main {
         }
         System.out.println("----");
 
-        CreatePdf.createPDF("curriculum.pdf", candidateuno);
+        //FILTROS
+
+
+        CandidatesList candidatesList = new CandidatesList();
+        candidatesList.addCandidate(candidateuno);
+        candidatesList.addCandidate(candidatedos);
+        candidatesList.addCandidate(candidatetres);
+
+
+        System.out.println("Ciudad: Gijon");
+        System.out.println(candidatesList.filterCity("Gijon"));
+
     }
 }

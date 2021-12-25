@@ -155,30 +155,4 @@ public class Candidate {
                 "\n}";
     }
 
-
-
-    public String skillstoPDF() {
-        String result = null;
-        for(Skill skills: skills){
-            result += "      * Tecnologias: " + skills.getSkill() + "\n";
-        }
-        return result;
-
-    }
-
-
-    public String candidateCurriculum() {
-        return " --" +
-                "\n " + fullname  +
-                "\n " + email  +
-                "\n " + phone  +
-                "\n Trabajo en remoto = " + remote +
-                "\n Posibilidad de traslado = " + mobility +
-                "\n Ciudad = " + city.getCity() +
-                "\n Pais = " + city.getCountry().getCountry() +
-                "\n Usuario = Id: " + user.getId_user() +" Nombre: " + user.getFullname() +
-                "\n Habilidades: \n" +
-                skillstoPDF();
-
-    }
 }
