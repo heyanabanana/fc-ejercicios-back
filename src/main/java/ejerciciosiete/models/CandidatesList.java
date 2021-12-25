@@ -94,4 +94,57 @@ public class CandidatesList {
         return candidatesFiltered;
     }
 
-}
+
+
+    //SORTING
+
+    //SORT REMOTO TRUE
+    public int totalRemote(){
+        int total = 0;
+        for (Candidate candidate : candidates) {
+            if (candidate.getRemote()) {
+                total++;
+            }
+        } return total;
+    }
+
+
+    //SORT MOBILITY TRUE
+    public int totalMobility(){
+        int total = 0;
+        for (Candidate candidate : candidates) {
+            if (candidate.getMobility()) {
+                total++;
+            }
+        } return total;
+    }
+
+    //SORT MOBILITY FALSE REMOTE FALSE
+    public int totalMobilityAndRemote(){
+        int total = 0;
+        for (Candidate candidate : candidates) {
+            if (!candidate.getMobility() && !candidate.getRemote()) {
+                total++;
+            }
+        } return total;
+    }
+
+    //SORT COUNTRY
+    public ArrayList<Country> setCountryTop() {
+        ArrayList<Country> countries = new ArrayList<>();
+        for (Candidate candidate : candidates) {
+            if (!candidates.contains(candidate.getCity().getCountry())) {
+                countries.add(candidate.getCity().getCountry());
+            }
+        }
+        for (int i = 0; i < countries.size(); i++) {
+            for (int j = 0; j < countries.size() - 1; j++) {
+                if (filterCity(countries.get(j).getCountry()).size() < filterCity(countries.get(j + 1).getCountry()).size()) {
+                    Country plus = countries.get(j);
+                    countries.set(j, countries.get(j + 1));
+                    countries.set(j + 1, plus);
+                }
+            }
+        }
+        return countries;
+    }}

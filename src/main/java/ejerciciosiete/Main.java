@@ -100,8 +100,6 @@ public class Main {
         System.out.println("----");
 
         //FILTROS
-
-
         CandidatesList candidatesList = new CandidatesList();
         candidatesList.addCandidate(candidateuno);
         candidatesList.addCandidate(candidatedos);
@@ -110,6 +108,19 @@ public class Main {
 
         System.out.println("Ciudad: Gijon");
         System.out.println(candidatesList.filterCity("Gijon"));
+
+        //SORT
+        System.out.println("CANDIDATOS TRABAJO REMOTO");
+        System.out.println(candidatesList.totalMobility());
+
+        System.out.println("CANDIDATOS TRASLADO");
+        System.out.println(candidatesList.totalMobility());
+
+        System.out.println("CANDIDATOS NO REMOTO NO TRASLADO");
+        System.out.println(candidatesList.totalMobility());
+
+        System.out.println("CIUDADES POR CANDIDATO");
+        System.out.println(candidatesList.setCountryTop());
 
     }
 }
